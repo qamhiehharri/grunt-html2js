@@ -13,7 +13,7 @@
 module.exports = function (grunt) {
 
   var path = require('path');
-  var minify = require('html-minifier').minify;
+  var minify = require('html-minifier-terser').minify;
 
   var escapeContent = function (content, quoteChar, indentString, pathToAddAsComment) {
     content = (pathToAddAsComment ? '<!-- template: ' + pathToAddAsComment + ' -->\n' : '') + content;
