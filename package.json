@@ -1,7 +1,7 @@
 {
-  "name": "grunt-html2js",
+  "name": "grunt-html2js-terser",
   "description": "Compiles AngularJS templates to JavaScript",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "homepage": "https://github.com/rquadling/grunt-html2js",
   "author": {
     "name": "Karl Goldstein",
@@ -23,7 +23,7 @@
   "license": "SEE LICENSE IN LICENSE-MIT",
   "main": "Gruntfile.js",
   "engines": {
-    "node": ">= 6"
+    "node": ">= 10"
   },
   "scripts": {
     "test": "grunt test"

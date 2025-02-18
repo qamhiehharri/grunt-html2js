@@ -6,9 +6,12 @@
 [![NPM](https://img.shields.io/npm/dy/grunt-html2js.svg?style=plastic)](https://www.npmjs.com/package/grunt-html2js)
 [![NPM](https://img.shields.io/npm/dt/grunt-html2js.svg?style=plastic)](https://www.npmjs.com/package/grunt-html2js)
 
-# grunt-html2js
+# grunt-html2js-terser
 
 Converts AngularJS templates to JavaScript
+
+Based on a fork from [grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) 
+but uses on [html-minifier-terser](https://github.com/terser/html-minifier-terser) as a dependency instead of [html-minifier](https://github.com/kangax/html-minifier).
 
 ## Getting Started
 This plugin requires Grunt v1 or later
@@ -18,13 +21,13 @@ guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-grun
 Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-html2js --save-dev
+npm install grunt-html2js-terser --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-html2js');
+grunt.loadNpmTasks('grunt-html2js-terser');
 ```
 
 ## The "html2js" task
@@ -182,7 +185,7 @@ options: { useStrict: true }
 Type: `Object`
 Default value: {}
 
-Minifies HTML using [html-minifier](https://github.com/kangax/html-minifier).
+Minifies HTML using [html-minifier-terser](https://github.com/terser/html-minifier-terser).
 
 ```
 options: {
@@ -305,82 +308,4 @@ functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
 
-0.1.1 Build module even if templates do not exist yet
-
-0.1.2 Preserve line feeds in templates to avoid breaking &lt;pre>-formatted text
-
-0.1.3 Add option to set the `module` option to null to disable creation of bundle module
-
-0.1.4 Add rename option
-
-0.1.5 Add config options for quoteChar, indentString and fileHeaderString (thanks @jonathana)
-
-0.1.6 Add support for CoffeeScript (thanks @srigi)
-
-0.1.7 Escape backslashes in template source (issue #11, thanks @JoakimBe)
-
-0.1.8 Add fileFooterString option (issue #13, thanks @duro)
-
-0.1.9 Add useStrict option (pull request #15, thanks @marcoose)
-
-0.2.0 Add htmlmin option (pull request #16, thanks @buberdds)
-
-0.2.1 Fix dependencies for htmlmin (pull request #17, vielen dank @mlegenhausen)
-
-0.2.2 Fix counter of converted files (pull request #18, thanks @srigi)
-
-0.2.3 Add option to interpret 'module' as function (pull request #20, thanks @CodingGorilla)
-
-0.2.4 Add `process` option (pull request #24, thanks @scottrippey)
-
-0.2.5 Add task name as argument to function variant of module option (pull request #37, thanks @lukovnikov)
-
-0.2.6 Add support for auto-detecting Jade templates as input (thanks @bahmutov)
-
-0.2.7 Add singleModule module for placing all templates in a single module (PR #43, thanks @janeklb)
-
-0.2.8 Allow passing option to Jade templates (PR #46, thanks @NickClark)
-
-0.2.9 Support relative file names for Jade templates (PR #48, thanks @dvonlehman)
-
-0.3.0 Allow use strict in single mode (PR #58, thanks @mfeckie)
-
-0.3.1 Add watch feature (PR #67, thanks @startswithaj)
-
-0.3.2 Update to stable chokidar (PR #68, thanks @paulmillr)
-
-0.3.3 Fix dependency on jade (PR #72, thanks @mathewleon)
-
-0.3.4 Add existingModule option (PR #75, thanks @Jandalf)
-
-0.3.5 Adds options to support AMD modules (PR #75, thanks @Southpaw17)
-
-0.3.6 Updates peer dependencies for Grunt 1.0 (PR #81)
-
-0.3.7 Fix dependencies for htmlmin
-
-As of 0.3.7, this package is now administered by Richard Quadling who gives a big "Thank you" to Karl for his hard work.
-
-0.3.8 Fix broken newlines (\r\r\n)
-
-0.4.0 Added ability to render pug templates. Maintains Backwards compatibility. (#83)
-      Marked support for jade templates as deprecated. Support will be removed in 0.5.0
-
-0.4.1 Added ability to add an HTML comment to the templates (#9/#10)
-
-0.4.2 Empty modules not generated if no source files located (#55)
-
-0.5.0 Introduce Travis CI for unit tests and code coverage.
-      Removed support for Jade.
-      Added badges.
-      Reformatted code and README.md.
-
-0.5.1 Fix options.quoteChar usage for module header (#64)
-
-0.6.0 Upgraded dependencies to latest versions.`npm audit` shows 0 vulnerabilities.
-
-0.7.0 Upgraded dependencies to latest versions.`npm audit` shows 0 vulnerabilities.
-
-0.8.0 Upgraded dependencies to latest versions.`npm audit` shows 0 vulnerabilities.
-
-0.9.0 Removed `istanbul` as a dependency as it is only used during testing. 
+0.10.0 Use html-minifier-terser instead of html-minifier. 
